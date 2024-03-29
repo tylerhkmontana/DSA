@@ -2,7 +2,7 @@ let randomArray = Array.from({length: 40}, () => Math.floor(Math.random() * 40))
 
 console.log(`Before: ${randomArray}`)
 
-function bubbleSort(unsortedArray) {
+const bubbleSort = function (unsortedArray) {
     let ua = [...unsortedArray]
     let count = 0
     for(let i = 0; i < ua.length; i++) {
@@ -63,3 +63,4 @@ function upgradedBubbleSort(unsortedArray) {
 console.log(`After: ${bubbleSort(randomArray)}`) // worst
 console.log(`After: ${improvedBubbleSort(randomArray)}`) // the more the array is initially sorted, the better performance it gets
 console.log(`After: ${upgradedBubbleSort(randomArray)}`) // Twice faster than the worst one
+
