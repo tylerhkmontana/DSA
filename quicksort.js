@@ -2,11 +2,10 @@ let randomArray = Array.from({length: 40}, () => Math.floor(Math.random() * 40))
 
 console.log(`Before: ${randomArray}`)
 
-function quicksort(unsortedArray, low=0, high=unsortedArray.length - 1) {
-    console.log(high)
+function quicksort(unsortedArray, low, high) {
     if (low < high) {
         let pivotValue = unsortedArray[high]
-        let pivotLoc = -1
+        let pivotLoc = low-1
         for (let i = low; i < high; i++) {
             if (unsortedArray[i] <= pivotValue) {
                 pivotLoc++
@@ -26,5 +25,5 @@ function quicksort(unsortedArray, low=0, high=unsortedArray.length - 1) {
     }
 }
 
-quicksort(randomArray)
+quicksort(randomArray, 0, randomArray.length-1)
 console.log(`After :${randomArray}`)
